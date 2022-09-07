@@ -1,0 +1,29 @@
+Source: nemo-keepalive
+Section: misc
+Priority: optional
+Maintainer: Erik Inkinen <erik.inkinen@gmail.com>
+Build-Depends: pkg-kde-tools,
+ qt5-qmake,
+ libiphb-dev,
+ mce-dev,
+ libdbus-1-dev,
+ debhelper (>= 4.1.0),
+ qtbase5-private-dev,
+ qtdeclarative5-private-dev,
+ libqt5dbus5,
+ libqt5test5,
+ doxygen
+Standards-Version: 3.7.2
+
+Package: nemo-keepalive
+Section: misc
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: CPU and display keepalive and scheduling library
+
+Package: nemo-keepalive-dev
+Section: devel
+Priority: extra
+Architecture: any
+Depends: nemo-keepalive (= ${binary:Version})
+Description: CPU and display keepalive and scheduling library

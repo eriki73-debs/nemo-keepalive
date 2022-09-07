@@ -1,0 +1,4 @@
+usr/include/keepalive
+usr/include/keepalive-glib
+usr/lib/*
+usr/lib/*/pkgconfig

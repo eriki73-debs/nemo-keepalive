@@ -1,0 +1,4 @@
+debian/tmp/usr/bin/keepalive-tool
+debian/tmp/usr/lib/*/libkeepalive.so*
+debian/tmp/usr/lib/*/libkeepalive-glib.so*
+debian/tmp/usr/lib/*/qt5/qml/Nemo/KeepAlive/*

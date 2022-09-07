@@ -203,6 +203,7 @@ install::
 	install -m755 -d $(ROOT)$(_LIBDIR)/
 	install -m644 libkeepalive-glib$(SO_VERS) $(ROOT)$(_LIBDIR)/
 	ln -sf  libkeepalive-glib$(SO_VERS) $(ROOT)$(_LIBDIR)/libkeepalive-glib.so
+	ln -sf  libkeepalive-glib$(SO_VERS) $(ROOT)$(_LIBDIR)/libkeepalive-glib.so.1
 
 	install -m755 -d $(ROOT)$(_INCLUDEDIR)/keepalive-glib/
 	install -m644 $(LIBRARY_HDR) $(ROOT)$(_INCLUDEDIR)/keepalive-glib/

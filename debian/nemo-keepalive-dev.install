@@ -1,0 +1,5 @@
+debian/tmp/usr/include/keepalive/*
+debian/tmp/usr/include/keepalive-glib/*
+debian/tmp/usr/lib/*/libkeepalive.so
+debian/tmp/usr/lib/*/libkeepalive-glib.so
+debian/tmp/usr/lib/*/pkgconfig/*.pc

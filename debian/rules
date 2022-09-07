@@ -1,0 +1,29 @@
+#!/usr/bin/make -f
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
+
+export QT_SELECT := qt5
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+%:
+	dh $@ --with pkgkde_symbolshelper
+
+override_dh_auto_clean:
+	dh_auto_clean
+
+override_dh_auto_configure:
+	dh_auto_configure -- QT_BUILD_PARTS+=tests QMAKE_PYTHON=python3
+
+override_dh_auto_build-arch:
+	dh_auto_build
+	make -C lib-glib
+	make -C tools
+
+override_dh_auto_install-arch:
+	dh_auto_install -- INSTALL_ROOT=$(CURDIR)/debian/tmp
+	make -C lib-glib install ROOT=$(CURDIR)/debian/tmp _LIBDIR="/usr/lib/$(DEB_HOST_MULTIARCH)"
+	make -C tools install ROOT=$(CURDIR)/debian/tmp
